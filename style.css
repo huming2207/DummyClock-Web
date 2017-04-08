@@ -1,0 +1,21 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
+
+p#time-string
+{
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 80px;
+    margin-bottom: 3px;
+}
+
+p#week-string
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+
+div.jumbotron.text-center
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
