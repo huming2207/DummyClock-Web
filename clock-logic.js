@@ -1,4 +1,4 @@
-'use-strict'
+"use strict";
 
 var clockTimerToken = setInterval(clockTimer, 1000);
 
