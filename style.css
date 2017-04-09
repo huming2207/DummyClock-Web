@@ -1,17 +1,48 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
-
 p#time-string
 {
-    font-family: 'Noto Sans SC', sans-serif;
-    font-size: 80px;
-    margin-bottom: 3px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 100px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 p#week-string
 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+p#weather-today,
+p#weather-tomorrow
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px 0px 0px 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+}
+
+i#weather-icon-today,
+i#weather-icon-tomorrow
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 60px;
+    margin: 0px 0px 0px 0px;
+}
+
+p#weather-status-today,
+p#weather-status-tomorrow
+{
+    margin: 0px 0px 0px 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25x;
 }
 
 div.jumbotron.text-center
