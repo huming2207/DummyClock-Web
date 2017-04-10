@@ -17,5 +17,9 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "htmlparser2": "^3.9.2",
+    "xmlhttprequest-cookie": "^0.9.4"
   }
 }
