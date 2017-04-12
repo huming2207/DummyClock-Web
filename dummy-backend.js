@@ -1,5 +1,5 @@
 function loadPtvTimeTable(){
-    $.getJSON("http://45.63.29.30/ptv.json", 
+    $.getJSON(ptv_backend_api_url, 
     function(data) {
         if(data.has_error == false)
         {
@@ -14,7 +14,7 @@ function loadPtvTimeTable(){
 }
 
 function loadRmitTimeTable(){
-    $.getJSON("http://45.63.29.30/rmit.json", 
+    $.getJSON(rmit_backend_api_url, 
     function(data) {
         if(data.has_error == false)
         {
