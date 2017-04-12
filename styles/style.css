@@ -1,0 +1,11 @@
+div.jumbotron.text-center
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.force-no-padding
+{
+    padding: 0 !important;
+    margin: 0 !important;
+}

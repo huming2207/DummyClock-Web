@@ -1,114 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>DummyClock.Web</title>
   <meta charset="utf-8">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|PT+Sans+Narrow:700" rel="stylesheet">
-  <link href="weather-icons.css" rel="stylesheet">
-  
+  <link href="styles/weather-icons.css" rel="stylesheet">
+
 
   <!-- Workaround for Electron, see http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
-  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
 
   <!-- Bootstrap & jQuery import begin... -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- Workaround for Electron -->
-  <script>if (window.module) module = window.module;</script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="backend-settings.js"></script>
-  <script src="clock-logic.js"></script>
-  <script src="yahoo-weather.js"></script>
-  <script src="dummy-backend.js"></script>
+  <link rel="stylesheet" href="styles/index-style.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/backend-settings.js"></script>
+  <script src="scripts/clock-logic.js"></script>
+  <script src="scripts/yahoo-weather.js"></script>
+  <script src="scripts/dummy-backend.js"></script>
 
 </head>
+
 <body>
 
-<!-- Main clock & weather jumbotron area -->
-<div class="jumbotron text-center" ondblclick="location.href = 'clock-only.html'">
-  
-  <!-- Clock and weather column -->
-  <div class="row">
-    <div class="col-sm-6">
-      <p id="time-string">Loading...</p>
-      <p id="week-string">Please wait</p> 
-    </div>
+  <!-- Main clock & weather jumbotron area -->
+  <div class="jumbotron text-center" ondblclick="location.href = 'clock-only.html'">
 
-    <!-- Weather column -->
-    <div class="col-sm-6"> 
+    <!-- Clock and weather column -->
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6">
-          <p style="font-weight: bold;">Today</p>
-          <p><i id="weather-icon-today"></i></p>
-          <p id="weather-status-today">Loading...</p>
-          <p id="weather-today">Loading...</p>
+          <p id="time-string">Loading...</p>
+          <p id="week-string">Please wait</p>
         </div>
+
+        <!-- Weather column -->
         <div class="col-sm-6">
-          <p style="font-weight: bold;">Tomorrow</p>
-          <p><i id="weather-icon-tomorrow"></i></p>
-          <p id="weather-status-tomorrow">Loading...</p>
-          <p id="weather-tomorrow">Loading...</p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <p id="weather-date-today" style="font-weight: bold;">Today</p>
+                <p><i id="weather-icon-today"></i></p>
+                <p id="weather-status-today">Loading...</p>
+                <p id="weather-today">Loading...</p>
+              </div>
+              <div class="col-sm-6">
+                <p id="weather-date-forecast-1" style="font-weight: bold;">?</p>
+                <p><i id="weather-icon-forecast-1"></i></p>
+                <p id="weather-status-forecast-1">Loading...</p>
+                <p id="weather-forecast-1">Loading...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="list-group force-no-padding">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4 id="depart-title-1" class="force-no-padding"></h4>
+            <p class="force-no-padding">
+              <span id="depart-details-1" class="force-no-padding"></span>
+            </p>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4 id="depart-title-2" class="force-no-padding"></h4>
+            <p class="force-no-padding">
+              <span id="depart-details-2" class="force-no-padding"></span>
+            </p>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4 id="depart-title-3" class="force-no-padding">No data</h4>
+            <p class="force-no-padding">
+              <span id="depart-details-3" class="force-no-padding"></span>
+            </p>
+          </a>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="list-group force-no-padding">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <h4 id="depart-title-1" class="force-no-padding"></h4>
-          <p class="force-no-padding">
-            <span id="depart-details-1" class="force-no-padding"></span>
-          </p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <h4 id="depart-title-2" class="force-no-padding"></h4>
-          <p class="force-no-padding">
-            <span id="depart-details-2" class="force-no-padding"></span>
-          </p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <h4 id="depart-title-3" class="force-no-padding">No data</h4>
-          <p class="force-no-padding">
-            <span id="depart-details-3" class="force-no-padding"></span>
-          </p>
-        </a>
+      <div class="col-sm-6">
+        <div class="list-group force-no-padding">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <h4 id="rmit-title-1" class="force-no-padding"></h4>
+            <p class="force-no-padding">
+              <span id="rmit-details-1" class="force-no-padding"></span>
+            </p>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <h4 id="rmit-title-2" class="force-no-padding"></h4>
+            <p class="force-no-padding">
+              <span id="rmit-details-2" class="force-no-padding"></span>
+            </p>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <h4 id="rmit-title-3" class="force-no-padding">No data</h4>
+            <p class="force-no-padding">
+              <span id="rmit-details-3" class="force-no-padding"></span>
+            </p>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="list-group force-no-padding">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-          <h4 id="rmit-title-1" class="force-no-padding"></h4>
-          <p class="force-no-padding">
-            <span id="rmit-details-1" class="force-no-padding"></span>
-          </p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-          <h4 id="rmit-title-2" class="force-no-padding"></h4>
-          <p class="force-no-padding">
-            <span id="rmit-details-2" class="force-no-padding"></span>
-          </p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-          <h4 id="rmit-title-3" class="force-no-padding">No data</h4>
-          <p class="force-no-padding">
-            <span id="rmit-details-3" class="force-no-padding"></span>
-          </p>
-        </a>
-      </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
 </body>
+
 </html>
