@@ -1,7 +1,7 @@
 {
-  "name": "dummyclock-web",
+  "name": "dummyclock.web",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Simple Electron app for Raspberry Pi",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
