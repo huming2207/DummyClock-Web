@@ -28,5 +28,5 @@ function loadRmitTimeTable(){
     }); 
 }
 
-var ptvTimerToken = setInterval("loadPtvTimeTable()", 20000);
-var rmitTimerToken = setInterval("loadRmitTimeTable()", 200000);
+var ptvTimerToken = setInterval("loadPtvTimeTable()", 10000);
+var rmitTimerToken = setInterval("loadRmitTimeTable()", 10000);

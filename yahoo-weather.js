@@ -15,4 +15,4 @@ function loadWeather(){
 
 
 
-var weatherTimerToken = setInterval("loadWeather()", 300000);
+var weatherTimerToken = setInterval("loadWeather()", 10000);
