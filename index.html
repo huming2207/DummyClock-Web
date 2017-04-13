@@ -35,12 +35,19 @@
   <script src="scripts/yahoo-weather.js"></script>
   <script src="scripts/dummy-backend.js"></script>
 
+  <!-- Initialize those JSON API contents -->
+  <script>
+    loadWeather();
+    loadRmitTimeTable();
+    loadPtvTimeTable();
+  </script>
+
 </head>
 
 <body>
 
   <!-- Main clock & weather jumbotron area -->
-  <div class="jumbotron text-center" ondblclick="location.href = 'clock-only.html'">
+  <div class="jumbotron text-center" ondblclick="location.href = 'clock-weather.html'">
 
     <!-- Clock and weather column -->
     <div class="container-fluid">

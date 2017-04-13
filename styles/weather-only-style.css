@@ -1,0 +1,72 @@
+p#time-string
+{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 130px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+p#week-string
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 35px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+div.jumbotron.text-center
+{
+    margin-bottom: 15px;
+}
+
+p#weather-date-today,
+p#weather-date-forecast-1,
+p#weather-date-forecast-2,
+p#weather-date-forecast-3
+{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p#weather-today,
+p#weather-forecast-1,
+p#weather-forecast-2,
+p#weather-forecast-3
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+}
+
+i#weather-icon-today,
+i#weather-icon-forecast-1,
+i#weather-icon-forecast-2,
+i#weather-icon-forecast-3
+{
+    padding-top: 15px;
+    padding-bottom: 0px;
+    font-size: 45px;
+    margin: 0px 0px 0px 0px;
+}
+
+p#weather-status-today,
+p#weather-status-forecast-1,
+p#weather-status-forecast-2,
+p#weather-status-forecast-3
+{
+    margin: 0px 0px 0px 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DummyClock.Web</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|PT+Sans+Narrow:700" rel="stylesheet">
+    <link href="styles/weather-icons.css" rel="stylesheet">
+
+    <!-- Workaround for Electron, see http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+
+    <!-- Bootstrap & jQuery import begin... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Workaround for Electron -->
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+    <link rel="stylesheet" href="styles/clock-weather-style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/backend-settings.js"></script>
+    <script src="scripts/clock-logic.js"></script>
+    <script src="scripts/yahoo-weather.js"></script>
+    <script src="scripts/dummy-backend.js"></script>
+
+    <script>
+        loadWeather();
+    </script>
+
+</head>
+
+<body>
+    <div class="jumbotron text-center" ondblclick="location.href = 'clock-only.html'">
+        <!-- Clock and weather column -->
+        <p id="time-string" class="clock-only">Loading...</p>
+        <p id="week-string" class="clock-only">Please wait</p>
+    </div>
+    <div class="container" ondblclick="location.href = 'weather-only.html'">
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                <p id="weather-date-today">Today</p>
+                <p><i id="weather-icon-today"></i></p>
+                <p id="weather-status-today">Loading...</p>
+                <p id="weather-today">Loading...</p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <p id="weather-date-forecast-1">?</p>
+                <p><i id="weather-icon-forecast-1"></i></p>
+                <p id="weather-status-forecast-1">Loading...</p>
+                <p id="weather-forecast-1">Loading...</p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <p id="weather-date-forecast-2">?</p>
+                <p><i id="weather-icon-forecast-2"></i></p>
+                <p id="weather-status-forecast-2">Loading...</p>
+                <p id="weather-forecast-2">Loading...</p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <p id="weather-date-forecast-3">?</p>
+                <p><i id="weather-icon-forecast-3"></i></p>
+                <p id="weather-status-forecast-3">Loading...</p>
+                <p id="weather-forecast-3">Loading...</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
